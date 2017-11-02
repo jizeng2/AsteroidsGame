@@ -8,8 +8,8 @@ public void setup()
 public void draw() 
 {
   background(250);
-  Hello.move();
   Hello.show();
+  Hello.move();
 }
 public void keyPressed()
 {
