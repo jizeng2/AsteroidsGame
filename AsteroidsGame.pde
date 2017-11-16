@@ -1,5 +1,6 @@
 Spaceship Hello;
-Stars[] universe;//your variable declarations here
+Stars[] universe;
+Asteroid[] stones;//your variable declarations here
 public void setup() 
 {
   background(250);
@@ -9,7 +10,12 @@ public void setup()
   for (int i=0; i < universe.length; i++)
   {
      universe[i]=new Stars(); 
-  }//your code here
+  }
+  stones = new Asteroid[20];
+  for (int i=0; i < stones.length; i++)
+  {
+     stones[i]=new Asteroid(); 
+  }
 }
 public void draw() 
 {
@@ -19,6 +25,11 @@ public void draw()
   for (int i=0; i < universe.length; i++)
   {
      universe[i].show();
+  }
+    for (int i=0; i < stones.length; i++)
+  {
+     stones[i].show();
+     stones[i].move();
   }
 }
 public void keyPressed()
