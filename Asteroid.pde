@@ -1,6 +1,6 @@
 class Asteroid extends Floater
 {
-  protected int mySpeed = 0;
+  private int mySpeed = 0;
   public Asteroid()
   {
     mySpeed = (int)(Math.random()*11)-5;
