@@ -1,4 +1,4 @@
-Spaceship Hello;
+Spaceship hello = new Spaceship();
 Stars[] universe;
 ArrayList<Asteroid>stones;
 ArrayList <Bullet> myBullets;//your variable declarations here
@@ -6,7 +6,6 @@ public void setup()
 {
   background(250);
   size (600, 600);
-  Hello = new Spaceship();
   universe = new Stars[50];
   for (int i=0; i < universe.length; i++)
   {
@@ -22,8 +21,8 @@ public void setup()
 public void draw() 
 {
   background(250);
-  Hello.show();
-  Hello.move();
+  hello.show();
+  hello.move();
   for (int i=0; i < universe.length; i++)
   {
      universe[i].show();
@@ -52,27 +51,27 @@ public void keyPressed()
 {
    if(keyCode == UP)
   {
-    Hello.accelerate(1.0);
+    hello.accelerate(1.0);
   }
   else if(keyCode == DOWN)
   {
-    Hello.setX((int)(Math.random()*600));
-    Hello.setY((int)(Math.random()*600));
-    Hello.setDirectionX(0);
-    Hello.setDirectionY(0);
-    Hello.setPointDirection((int)(Math.random()*360));
+    hello.setX((int)(Math.random()*600));
+    hello.setY((int)(Math.random()*600));
+    hello.setDirectionX(0);
+    hello.setDirectionY(0);
+    hello.setPointDirection((int)(Math.random()*360));
   }
 
   else if(keyCode == LEFT)
   {
-    Hello.turn(-15);
+    hello.turn(-15);
   }
   else if (keyCode == RIGHT)
   {
-    Hello.turn(15);
+    hello.turn(15);
   }
   if(key == ' ')
   {
-    myBullets.add(new Bullet(Hello));
+    myBullets.add(new Bullet(hello));
   }
 }
