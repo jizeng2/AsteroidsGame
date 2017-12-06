@@ -1,6 +1,7 @@
 Spaceship Hello;
 Stars[] universe;
-Asteroid[] stones;//your variable declarations here
+ArrayList<Asteroid>stones;
+ArrayList <Bullet> myBullets;//your variable declarations here
 public void setup() 
 {
   background(250);
@@ -11,11 +12,12 @@ public void setup()
   {
      universe[i]=new Stars(); 
   }
-  stones = new Asteroid[20];
-  for (int i=0; i < stones.length; i++)
+  stones = new ArrayList <Asteroid>();
+  for (int i=0; i < 20; i++)
   {
-     stones[i]=new Asteroid(); 
+     stones.add(i, new Asteroid());
   }
+   myBullets = new ArrayList <Bullet>();
 }
 public void draw() 
 {
@@ -26,10 +28,24 @@ public void draw()
   {
      universe[i].show();
   }
-    for (int i=0; i < stones.length; i++)
+  for (int i=0; i < stones.size(); i++)
   {
-     stones[i].show();
-     stones[i].move();
+     stones.get(i).show();
+     stones.get(i).move();
+  }
+  for(int i = 0; i < myBullets.size(); i++)
+  {
+    myBullets.get(i).show();
+    myBullets.get(i).move();
+    for(int j = 0; j < stones.size(); j++)
+    {
+      if(myBullets.get(i).collide(stones.get(j).getX(),stones.get(j).getY()) == true)
+      {
+        myBullets.remove(i);
+        stones.remove(j);
+        break;
+      }
+    }
   }
 }
 public void keyPressed()
@@ -55,5 +71,8 @@ public void keyPressed()
   {
     Hello.turn(15);
   }
-
+  if(key == ' ')
+  {
+    myBullets.add(new Bullet(Hello));
+  }
 }

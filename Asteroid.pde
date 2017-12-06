@@ -1,4 +1,4 @@
-class Asteroid extends Floater
+public class Asteroid extends Floater
 {
   private int mySpeed = 0;
   public Asteroid()

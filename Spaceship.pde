@@ -1,8 +1,8 @@
-class Spaceship extends Floater  
+public class Spaceship extends Floater  
 {   
   public Spaceship()
   {
-    myColor = color(196, 221, 229);
+    myColor = color(96, 211, 203);
     myCenterX = 300;
     myCenterY = 300;
     myDirectionX = 0;
