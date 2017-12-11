@@ -1,11 +1,12 @@
 Spaceship hello = new Spaceship();
 Stars[] universe;
-ArrayList<Asteroid>stones;
+ArrayList <Asteroid> stones;
 ArrayList <Bullet> myBullets;//your variable declarations here
 public void setup() 
 {
-  background(250);
   size (600, 600);
+  background(250);
+  hello = new Spaceship();
   universe = new Stars[50];
   for (int i=0; i < universe.length; i++)
   {
@@ -68,7 +69,7 @@ public void keyPressed()
   }
   else if (keyCode == RIGHT)
   {
-    hello.turn(15);
+     hello.turn(15);
   }
   if(key == ' ')
   {

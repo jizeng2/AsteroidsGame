@@ -30,7 +30,7 @@ public abstract class Floater //Do NOT modify the Floater class! Make changes in
   public void turn (int nDegreesOfRotation)   
   {     
     //rotates the floater by a given number of degrees    
-    myPointDirection+=nDegreesOfRotation;   
+    myPointDirection += nDegreesOfRotation;   
   }   
   public void move ()   //move the floater in the current direction of travel
   {      
@@ -39,15 +39,15 @@ public abstract class Floater //Do NOT modify the Floater class! Make changes in
     myCenterY += myDirectionY;     
 
     //wrap around screen    
-    if(myCenterX >width)
+    if(myCenterX > width)
     {     
       myCenterX = 0;    
     }    
-    else if (myCenterX<0)
+    else if (myCenterX < 0)
     {     
       myCenterX = width;    
     }    
-    if(myCenterY >height)
+    if(myCenterY > height)
     {    
       myCenterY = 0;    
     } 
@@ -57,7 +57,7 @@ public abstract class Floater //Do NOT modify the Floater class! Make changes in
       myCenterY = height;    
     }   
   }   
-  public void show ()  //Draws the floater at the current position  
+  public void show ()    
   {             
     fill(myColor);   
     stroke(myColor);    
