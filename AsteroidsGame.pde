@@ -1,7 +1,7 @@
 Spaceship hello = new Spaceship();
 Stars[] universe;
-ArrayList <Asteroid> stones;
-ArrayList <Bullet> myBullets;//your variable declarations here
+ArrayList <Asteroid> stones= new ArrayList <Asteroid>();
+ArrayList <Bullet> myBullets;
 public void setup() 
 {
   size (600, 600);
@@ -12,13 +12,12 @@ public void setup()
   {
      universe[i]=new Stars(); 
   }
-  stones = new ArrayList <Asteroid>();
   for (int i=0; i < 20; i++)
   {
      stones.add(i, new Asteroid());
   }
    myBullets = new ArrayList <Bullet>();
-}
+} 
 public void draw() 
 {
   background(250);
